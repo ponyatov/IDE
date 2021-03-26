@@ -1,0 +1,14 @@
+{
+	"recommendations": [
+		"ryuta46.multi-command",
+		"stkb.rewrap",
+		"auchenberg.vscode-browser-preview",
+		// "tabnine.tabnine-vscode",
+		// "ms-python.python",
+		"tht13.python",
+		// "betterthantomorrow.calva",
+		// "pgourlain.erlang",
+		// "jakebecker.elixir-ls",
+		"luveti.kconfig",
+	]
+}
