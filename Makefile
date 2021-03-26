@@ -31,14 +31,11 @@ NIMP	= nimpretty
 # / tool
 
 # \ src
-P      += config.py
-Y      += $(MODULE).py test_$(MODULE).py
-Y      += metaL.py test_metaL.py
-Y      += EDS.py
-N      += src/IDE.nim
+N      += src/$(MODULE).nim
 N      += src/syntax/generic.nim src/syntax/Nim.nim
 N      += src/syntax/Makefile.nim src/syntax/Python.nim
-S      += $(Y) $(N)
+S      += $(MODULE).nimble
+S      += $(N)
 # / src
 
 # \ obj
@@ -63,21 +60,10 @@ test: $(PYT) test_metaL.py
 	$(MIX)  test
 
 .PHONY: format
-format:
-	$(NIMP) --indent:2 $(N)
+format: $(N)
+	$(NIMP) --indent:2 $<
 
-# \ elixir
-.PHONY: iex
-iex:
-	$(IEX) -S mix phx.server
-	$(MAKE) format
-	$(MAKE) $@
-# / elixir
 # / all
-
-# \ nginx
-NGINX   = $(CWD)/local/bin/nginx
-# / nginx
 
 # \ doc
 
@@ -182,10 +168,8 @@ static/js/leaflet/leaflet.js: $(LEAFLET_GZ)
 # / install
 
 # \ merge
-MERGE += README.md Makefile .gitignore apt.txt apt.dev LICENSE doxy.gen
-MERGE += .vscode bin doc tmp src lib test
-MERGE += requirements.txt $(S) mix.exs .formatter.exs
-MERGE += geo
+MERGE += README.md Makefile .gitignore apt.txt apt.dev LICENSE doxy.gen $(S)
+MERGE += .vscode bin doc tmp src
 
 .PHONY: main
 main:
