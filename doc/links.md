@@ -6,6 +6,10 @@
 
 @ref nim
 
+* [picheta] Dominik Picheta <br>
+    [Nim in Action](https://www.manning.com/books/nim-in-action) <br>
+    Manning, August 2017  ISBN 9781617293436  320 pages
+
 ## Java
 
 ## Lisp

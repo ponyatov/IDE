@@ -8,5 +8,5 @@ It's a tiny programmer's editor rework & Nim language workout.
 
 github: https://github.com/ponyatov/cp
 
-
-@ref links
+* @ref nim
+* @ref links
