@@ -1,3 +1,4 @@
 import syntax/generic
 
-echo "generic"
+when isMainModule:
+  echo(generic())
